@@ -22,4 +22,8 @@ public class NinjaService {
 	public List<Ninja> findAllByDojo(Dojo d){
 		return ninjaRepo.findAllByDojo(d);
 	}
+	
+	public Ninja create(Ninja n) {
+		return ninjaRepo.save(n);
+	}
 }

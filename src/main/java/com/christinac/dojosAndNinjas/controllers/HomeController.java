@@ -1,5 +1,7 @@
 package com.christinac.dojosAndNinjas.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.christinac.dojosAndNinjas.models.Dojo;
+import com.christinac.dojosAndNinjas.models.Ninja;
 import com.christinac.dojosAndNinjas.services.DojoService;
 
 @Controller
@@ -29,7 +32,9 @@ public class HomeController {
 	}
 	
 	@GetMapping("/ninja/new")
-	public String newNinja(@ModelAttribute("newNinja") Ninja newNinja) {
+	public String newNinja(@ModelAttribute("newNinja") Ninja newNinja, Model model) {
+		List<Dojo> allDojos = dojoServ.findAll();
+		model.addAttribute("allDojos", allDojos);
 		return "newNinja.jsp";
 	}
 }

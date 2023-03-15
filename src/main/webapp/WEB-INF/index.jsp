@@ -19,6 +19,13 @@ pageEncoding="UTF-8"%>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <!-- change to match your file/naming structure -->
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Ruda:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="d-flex justify-content-between align-items-sm-baseline">
@@ -27,11 +34,18 @@ pageEncoding="UTF-8"%>
     </div>
     <hr />
     <div class="card p-3 col-5 form-group mb-3">
-      <form action="/dojo/create" method="POST" modelAttribute="newDojo">
-        <label for="name" class="form-label">Name:</label>
-        <input type="text" name="name" class="form-control mb-3" />
+      <form:form action="/dojo/create" method="POST" modelAttribute="newDojo">
+        <form:label for="name" class="form-label" path="name"
+          >Dojo Name:</form:label
+        >
+        <form:input
+          type="text"
+          name="name"
+          class="form-control mb-3"
+          path="name"
+        />
         <button class="btn btn-primary">Create</button>
-      </form>
+      </form:form>
     </div>
   </body>
 </html>

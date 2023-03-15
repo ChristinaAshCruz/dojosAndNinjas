@@ -1,5 +1,42 @@
 @charset "UTF-8";
 
+
+color palette {
+	color: #849DFF;
+	color: #0A3DB0;
+	color: #FFC0D7;
+	color: #FFF8F0;
+	
+	
+}
 body {
+	background-color:#FFF8F0;
+	color:#0A3DB0;
 	margin: 40px;
+	font-family: 'Roboto Slab', serif;
+	font-weight:400;
+	font-size:12pt;
+}
+
+h{
+	font-family: 'Ruda', sans-serif;
+	font-weight:700;
+}
+hr {
+	color:#0A3DB0;
+}
+.btn {
+	background-color:#FFC0D7;
+	border: 2px solid #FFC0D7;
+	color:#0A3DB0;
+	
+	
+}
+.card {
+	border: 2px solid #FFC0D7;
+	background-color:#FFF8F0;
+}
+.table {
+	color:#0A3DB0;
+	
 }

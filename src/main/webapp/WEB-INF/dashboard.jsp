@@ -19,9 +19,20 @@ pageEncoding="UTF-8"%>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <!-- change to match your file/naming structure -->
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Ruda:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1><c:out value="${thisDojo.name}"></c:out> Location Ninjas</h1>
+    <div class="d-flex justify-content-between align-items-sm-baseline">
+      <h1><c:out value="${thisDojo.name}"></c:out> Location Ninjas</h1>
+      <a href="/" class="btn btn-primary">Back To Home</a>
+    </div>
+    <hr />
     <div class="card p-3 col-5">
       <table class="table">
         <thead>
@@ -31,7 +42,7 @@ pageEncoding="UTF-8"%>
             <th schope="col">Age</th>
           </tr>
         </thead>
-        <c:forEach var="ninja" items="${dojo.ninjas}">
+        <c:forEach var="ninja" items="${thisDojo.ninjas}">
           <tr>
             <td>
               <c:out value="${ninja.firstName}"></c:out>
